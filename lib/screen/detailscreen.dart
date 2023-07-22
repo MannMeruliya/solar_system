@@ -25,14 +25,14 @@ class _detailscreenState extends State<detailscreen> {
             child: Image.asset("assets/2.jpg",fit: BoxFit.fill,),
           ),
           Container(
-            padding: EdgeInsets.all(10),
+            // padding: EdgeInsets.all(10),
             child: SingleChildScrollView(
               child: Column(
                 children: [
                   Container(
                     width: double.infinity,
                     child: Image(
-                      height: 400,
+                      height: 350,
                       image: AssetImage("${data.image}"),
                     ),
                     decoration: BoxDecoration(
@@ -45,19 +45,11 @@ class _detailscreenState extends State<detailscreen> {
                       ],
                     ),
                   ),
-                  SizedBox(height: 20),
                   Container(
-                    height: 100,
+                    height: 70,
                     width: double.infinity,
                     child: Column(
                       children: [
-                        // Text(
-                        //   "${data.charactername}",
-                        //   style: TextStyle(
-                        //     fontSize: 40,
-                        //     fontWeight: FontWeight.bold,
-                        //   ),
-                        // ),
                         Text(
                           "${data.name}",
                           style: TextStyle(
@@ -78,22 +70,22 @@ class _detailscreenState extends State<detailscreen> {
                     ),
                   ),
                   SizedBox(
-                    height: 20,
+                    height: 5,
                   ),
-                  // Container(
-                  //   child: Text(
-                  //     "${data.info}",
-                  //     style: TextStyle(
-                  //         fontSize: 22,
-                  //         color: Colors.black,
-                  //         fontWeight: FontWeight.w500),
-                  //   ),
-                  // ),
+                  Container(
+                    margin: EdgeInsets.all(20),
+                    child: Text(
+                      "${data.info}",
+                      style: TextStyle(
+                          fontSize: 22,
+                          color: Colors.grey,
+                          fontWeight: FontWeight.w500),
+                    ),
+                  ),
                 ],
               ),
             ),
           ),
-
         ],
       ),
     );
