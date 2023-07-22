@@ -7,7 +7,26 @@ class detailscreen extends StatefulWidget {
   State<detailscreen> createState() => _detailscreenState();
 }
 
-class _detailscreenState extends State<detailscreen> {
+class _detailscreenState extends State<detailscreen>
+with TickerProviderStateMixin
+{
+
+  late final AnimationController _controller = AnimationController(
+    duration: const Duration(seconds: 4),
+    vsync: this,
+  )..repeat();
+
+  final Tween<double> turnsTween = Tween<double>(
+    begin: 1,
+    end: 0,
+  );
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     dynamic data = ModalRoute.of(context)!.settings.arguments;
@@ -31,9 +50,9 @@ class _detailscreenState extends State<detailscreen> {
                 children: [
                   Container(
                     width: double.infinity,
-                    child: Image(
-                      height: 350,
-                      image: AssetImage("${data.image}"),
+                    child: RotationTransition(
+                      turns: turnsTween.animate(_controller),
+                      child: Image.asset('${data.image}')
                     ),
                     decoration: BoxDecoration(
                       boxShadow: [
@@ -55,7 +74,7 @@ class _detailscreenState extends State<detailscreen> {
                           style: TextStyle(
                               fontSize: 30,
                               fontWeight: FontWeight.bold,
-                              color: Colors.grey),
+                              color: Colors.white),
                         ),
                       ],
                     ),
@@ -78,7 +97,7 @@ class _detailscreenState extends State<detailscreen> {
                       "${data.info}",
                       style: TextStyle(
                           fontSize: 22,
-                          color: Colors.grey,
+                          color: Colors.white,
                           fontWeight: FontWeight.w500),
                     ),
                   ),

@@ -9,8 +9,25 @@ class homescreen extends StatefulWidget {
   State<homescreen> createState() => _homescreenState();
 }
 
-class _homescreenState extends State<homescreen> {
+class _homescreenState extends State<homescreen>
+with TickerProviderStateMixin
+{
 
+  late final AnimationController _controller = AnimationController(
+    duration: const Duration(seconds: 4),
+    vsync: this,
+  )..repeat();
+
+  final Tween<double> turnsTween = Tween<double>(
+    begin: 1,
+    end: 0,
+  );
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -77,10 +94,13 @@ class _homescreenState extends State<homescreen> {
                             children: [
                               Align(
                                 alignment: Alignment(0, -3),
-                                child: Image(
-                                  height: 250,
-                                  width: 250,
-                                  image: AssetImage("${data.image}"),
+                                child: RotationTransition(
+                                  turns: turnsTween.animate(_controller),
+                                  child: Image(
+                                    height: 250,
+                                    width: 250,
+                                    image: AssetImage("${data.image}"),
+                                  ),
                                 ),
                               ),
                               Container(
