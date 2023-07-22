@@ -1,16 +1,10 @@
-# solar_system
+<img src="https://github.com/MannMeruliya/solar_system/assets/113959975/e3eecc96-618d-4bf4-8371-429b388aa071"  width="300" height="600">
 
-A new Flutter project.
+<img src="https://github.com/MannMeruliya/solar_system/assets/113959975/d55b6a78-1964-4c08-8d90-3b2092ff35f2  "  width="300" height="600">
 
-## Getting Started
+<img src="https://github.com/MannMeruliya/solar_system/assets/113959975/35864f55-0c45-4637-a4ea-154ca5c0f615"  width="300" height="600">
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+https://github.com/MannMeruliya/solar_system/assets/113959975/fed95b9e-cf0e-4ecd-9b75-24a0dfdce42e
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
